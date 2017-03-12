@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Ejercicio1Ajax</display-name>
+  <context-param>
+  	<param-name>unidadPersistencia</param-name>
+  	<param-value>Ejercicio1Ajax</param-value>
+  </context-param>
+  <servlet>
+    <description>Servlet Ajax, muestra las peliculas</description>
+    <display-name>MostrarInfoPeliculas</display-name>
+    <servlet-name>MostrarInfoPeliculas</servlet-name>
+    <servlet-class>ejercicio1Ajax.servlets.MostrarInfoPeliculas</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MostrarInfoPeliculas</servlet-name>
+    <url-pattern>/mostrarinfopeliculas</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>verinfopeliculas.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
