@@ -57,6 +57,13 @@
 		var valor = document.getElementById("titulo").value;
 		document.getElementById("titulo2").value=valor;
 	}
+	function enviarConIntro(evento){
+	    if (evento.keyCode == 13) {
+			document.getElementById("titulo2").value=document.getElementById("titulo").value;		
+			evento.preventDefault();
+			mostrarTabla();
+    	}
+    }
 	function mostrarTabla() {
 		objAJAX = new ObjetoAJAX();
 		var objForm = document.forms[1];
@@ -80,9 +87,9 @@
 <body>
 	<div>
 	<fieldset>
-		<p>Introduzca un caŕacter para buscar</p>
+		<p>Introduzca un carácter para buscar</p>
 		<form action="/ejercicio1ajax/mostrarinfopeliculas" method="post">
-			<label for="titulo">Título: </label><input id="titulo" type="text" name="titulo" required="required" onkeyup="validar(event)" onchange="cambiar()">
+			<label for="titulo">Título: </label><input id="titulo" type="text" name="titulo" required="required" onkeypress="enviarConIntro(event)" onkeyup="validar(event)" onchange="cambiar()">
 		</form>
 		<form action="/ejercicio1ajax/mostrarinfopeliculas" method="post">
 			<input id="titulo2" type="hidden" name="titulo2">

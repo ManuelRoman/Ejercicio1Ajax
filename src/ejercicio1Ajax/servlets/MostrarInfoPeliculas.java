@@ -114,7 +114,7 @@ public class MostrarInfoPeliculas extends HttpServlet{
 				String tituloCompleto = daoConsultas.obtenerTituloFotograma(datos);
 				System.out.println("Titulo completo ofrecido: "+tituloCompleto);
 				if(tituloCompleto!=null){
-					out.println(tituloCompleto);
+					out.write(tituloCompleto);
 				}
 				out.close();
 			} catch (EntityExistsException e) {
@@ -178,7 +178,7 @@ public class MostrarInfoPeliculas extends HttpServlet{
 				objJSON = new StringBuilder("[]");
 			}
 			System.out.println("Cadena que se enviará: "+objJSON.toString());
-			out.println(objJSON.toString());
+			out.write(objJSON.toString());
 			out.close();
 		}
 		
